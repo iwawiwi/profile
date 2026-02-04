@@ -4,138 +4,220 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Pengantar Perkuliahan</title>
+		<title>Perkenalan Dosen</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
 		<link rel="stylesheet" href="dist/theme/white.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="css/custom.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 	</head>
 	<body>
+		<button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
 		<div class="reveal">
 			<div class="slides">
 
-				<!-- Cover Slide -->
-				<section>
-					<h1>Pengantar Perkuliahan</h1>
+				<!-- 1. Cover -->
+				<section class="hero">
+					<span class="tag">Profil Dosen</span>
+					<div class="hero-illustration" aria-hidden="true">
+						<svg viewBox="0 0 320 220" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg">
+							<defs>
+								<linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+									<stop offset="0%" stop-color="#60a5fa"/>
+									<stop offset="100%" stop-color="#a78bfa"/>
+								</linearGradient>
+							</defs>
+							<rect x="16" y="18" width="288" height="160" rx="18" fill="url(#grad)" opacity="0.15"/>
+							<rect x="36" y="40" width="248" height="120" rx="14" fill="#ffffff" opacity="0.9"/>
+							<circle cx="88" cy="86" r="18" fill="#60a5fa" opacity="0.8"/>
+							<rect x="120" y="72" width="140" height="12" rx="6" fill="#94a3b8" opacity="0.7"/>
+							<rect x="120" y="94" width="100" height="10" rx="5" fill="#cbd5f5"/>
+							<rect x="56" y="132" width="208" height="10" rx="5" fill="#cbd5f5"/>
+							<rect x="56" y="150" width="164" height="10" rx="5" fill="#cbd5f5"/>
+							<path d="M34 188h252" stroke="#cbd5f5" stroke-width="6" stroke-linecap="round"/>
+						</svg>
+					</div>
+					<h1>I <span class="name-highlight">WAYAN</span> Wipra<span class="name-highlight">YOGA</span> Wisesa</h1>
 					<h3>Program Studi Teknik Informatika</h3>
-					<h4>Institut Teknologi Sumatera</h4>
+					<h3>Institut Teknologi Sumatera</h3>
 				</section>
 
-				<!-- Profil Pengajar -->
+				<!-- 2. Tentang Saya -->
 				<section>
-					<section>
-						<h2>Profil Pengajar</h2>
-						<h3>I Wayan Wiprayoga Wisesa</h3>
-						<p><small>Jl. Anyelir No. 144A, Perumahan Bataranila<br>Hajimena, Lampung Selatan</small></p>
-						<p><small>
-							Email: wayan.wisesa@if.itera.ac.id<br>
-						</small></p>
-					</section>
-
-					<section>
-						<h3>Pendidikan & Pengalaman</h3>
-						<div style="display: flex; justify-content: space-around;">
-							<div style="flex: 1;">
-								<h4>Pendidikan</h4>
-								<ul>
-									<li>(S1) Sarjana Ilmu Komputer</li>
-									<li>(S2) Magister Ilmu Komputer</li>
-								</ul>
-							</div>
-							<div style="flex: 1;">
-								<h4>Pengalaman Kerja</h4>
-								<ul>
-									<li>2011-2012: Programmer</li>
-									<li>2012-2016: Research Assistant</li>
-									<li>2017-Now: Dosen T. Informatika</li>
-								</ul>
-							</div>
+					<span class="tag">Tentang Saya</span>
+					<h2>Salam Kenal!</h2>
+					<div class="grid-2">
+						<div class="card">
+							<h4>👤 Nama Lengkap</h4>
+							<p>I Wayan Wiprayoga Wisesa</p>
+							<p style="margin-top: 8px;"><small>Panggilan: Pak Wayan / Pak Yoga</small></p>
+							<p style="margin-top: 8px;"><small>Kode Dosen: IWW</small></p>
 						</div>
-					</section>
+						<div class="card">
+							<h4>🏠 Asal</h4>
+							<p>Bali, Indonesia</p>
+							<p style="margin-top: 8px;"><small>Domisili: Lampung Selatan</small></p>
+						</div>
+					</div>
+					<div class="card" style="margin-top: 16px;">
+						<h4>💼 Posisi Saat Ini</h4>
+						<p>Dosen Tetap Program Studi Teknik Informatika, Institut Teknologi Sumatera (ITERA) sejak 2017</p>
+					</div>
+				</section>
 
-					<section>
-						<h3>Minat Penelitian</h3>
-						<ul>
-							<li>Steganography</li>
-							<li>Music Information Retrieval</li>
-							<li>Gesture Recognition</li>
-						</ul>
-					</section>
+				<!-- 3. Pendidikan & Karir -->
+				<section>
+					<span class="tag">Latar Belakang</span>
+					<h2>Pendidikan & Pengalaman</h2>
+					<div class="grid-2">
+						<div>
+							<h3>🎓 Pendidikan</h3>
+							<div class="rule-item"><span class="icon">🎓</span><span class="text"><strong>S1</strong> - Ilmu Komputer, Universitas Indonesia</span></div>
+							<div class="rule-item"><span class="icon">🎓</span><span class="text"><strong>S2</strong> - Ilmu Komputer, Universitas Indonesia</span></div>
+						</div>
+						<div>
+							<h3>💼 Karir</h3>
+							<div class="rule-item"><span class="icon">💻</span><span class="text"><strong>2011-2012</strong> - Programmer</span></div>
+							<div class="rule-item"><span class="icon">🔬</span><span class="text"><strong>2012-2016</strong> - Research Assistant</span></div>
+							<div class="rule-item"><span class="icon">👨‍🏫</span><span class="text"><strong>2017-Sekarang</strong> - Dosen ITERA</span></div>
+						</div>
+					</div>
+				</section>
 
-					<section>
-						<h3>Riwayat Mengajar</h3>
-						<div style="font-size: 0.8em; columns: 2;">
-							<ul>
-								<li>Sistem Operasi</li>
-								<li>Algoritma dan Struktur Data</li>
-								<li>Sistem Multimedia</li>
-								<li>Algoritma Pemrograman</li>
-								<li>Organisasi dan Arsitektur Komputer</li>
-								<li>Pengantar Komputer dan Software II</li>
-								<li>Probabilitas dan Statistika</li>
+				<!-- 4. Bidang Keahlian -->
+				<section>
+					<span class="tag">Riset & Keahlian</span>
+					<h2>Bidang yang Saya Tekuni</h2>
+					<div class="grid-3">
+						<div class="card">
+							<h4>🔐 Keamanan Informasi</h4>
+							<p>Steganography, Watermarking, Privacy by Design</p>
+						</div>
+						<div class="card">
+							<h4>🎵 Multimedia</h4>
+							<p>Music Information Retrieval, Audio Processing</p>
+						</div>
+						<div class="card">
+							<h4>🤖 Interaksi</h4>
+							<p>Gesture Recognition, Human-Computer Interaction</p>
+						</div>
+					</div>
+					<h3 style="margin-top: 20px;">📚 Mata Kuliah yang Pernah Diampu</h3>
+					<div class="grid-4">
+						<div class="card"><p>Sistem Operasi</p></div>
+						<div class="card"><p>Algoritma & Struktur Data</p></div>
+						<div class="card"><p>Sistem Multimedia</p></div>
+						<div class="card"><p>Organisasi Komputer</p></div>
+					</div>
+				</section>
+
+				<!-- 5. Kontrak Kuliah Umum -->
+				<section>
+					<span class="tag">Kontrak Kuliah</span>
+					<h2>Aturan yang Berlaku di Semua MK Saya</h2>
+					<div class="rule-item"><span class="icon">⏰</span><span class="text">Toleransi keterlambatan <strong>20 menit</strong>. Lebih dari itu, boleh ikut kuliah tanpa absen.</span></div>
+					<div class="rule-item"><span class="icon">📅</span><span class="text">Jika berhalangan hadir, kabari <strong>maksimal H-1</strong> dengan alasan jelas.</span></div>
+					<div class="rule-item"><span class="icon">📝</span><span class="text">Ujian/kuis susulan dengan <strong>surat keterangan resmi</strong>, maksimal H+7.</span></div>
+					<div class="rule-item"><span class="icon">🌐</span><span class="text">Wajib enroll di <strong>kuliah.itera.ac.id</strong> dan aktif cek informasi.</span></div>
+					<div class="rule-item"><span class="icon">📤</span><span class="text">Pengumpulan tugas <strong>sesuai format penamaan</strong> yang ditentukan.</span></div>
+					<div class="rule-item danger"><span class="icon">🚫</span><span class="text">PLAGIARISME = NILAI NOL. Tidak ada toleransi.</span></div>
+				</section>
+
+				<!-- 6. Aturan Tambahan -->
+				<section>
+					<span class="tag">Catatan Penting</span>
+					<h2>Hal yang Perlu Diketahui</h2>
+					<div class="grid-2">
+						<div class="card">
+							<h4>✅ Yang Saya Harapkan</h4>
+							<ul class="list" style="margin-top: 8px;">
+								<li><span class="num">1</span><div class="content">Hadir tepat waktu & aktif di kelas</div></li>
+								<li><span class="num">2</span><div class="content">Komunikasi dengan etika yang baik</div></li>
+								<li><span class="num">3</span><div class="content">Jujur dalam mengerjakan tugas/ujian</div></li>
 							</ul>
 						</div>
-					</section>
+						<div class="card">
+							<h4>❌ Yang Tidak Bisa Ditoleransi</h4>
+							<ul class="list" style="margin-top: 8px;">
+								<li><span class="num" style="background: var(--danger);">!</span><div class="content">Menyontek atau plagiarisme</div></li>
+								<li><span class="num" style="background: var(--danger);">!</span><div class="content">Meminta tugas tambahan untuk nilai</div></li>
+								<li><span class="num" style="background: var(--danger);">!</span><div class="content">Titip absen / ketidakjujuran</div></li>
+							</ul>
+						</div>
+					</div>
 				</section>
 
-				<!-- Kontrak Perkuliahan -->
+				<!-- 7. Cara Menghubungi -->
 				<section>
-					<h2>Kontrak Perkuliahan</h2>
-					<h3>Mahasiswa & Dosen</h3>
-					<ul>
-						<li>Tepat Waktu</li>
-						<li>Berperilaku Santun</li>
-						<li>Tertib dan Disiplin</li>
-						<li>Memanfaatkan web kuliah: <a href="http://kuliah.itera.ac.id">http://kuliah.itera.ac.id</a></li>
-					</ul>
+					<span class="tag">Kontak</span>
+					<h2>Cara Menghubungi Saya</h2>
+					<div class="contact-row">
+						<div class="contact-item">
+							<div class="icon">📧</div>
+							<div class="info">
+								<div class="title">Email</div>
+								<div class="value">wayan.wisesa@if.itera.ac.id</div>
+							</div>
+						</div>
+						<div class="contact-item">
+							<div class="icon">🏢</div>
+							<div class="info">
+								<div class="title">Ruangan</div>
+								<div class="value">Lab IoT Teknik Informatika, Labtek 3 Lantai 3 ITERA</div>
+							</div>
+						</div>
+					</div>
+					<div class="contact-row">
+						<div class="contact-item">
+							<div class="icon">🕐</div>
+							<div class="info">
+								<div class="title">Jam Konsultasi</div>
+								<div class="value">Menyesuaikan waktu saat tidak ada kegiatan mengajar saat jam kerja</div>
+							</div>
+						</div>
+						<div class="contact-item">
+							<div class="icon">🌐</div>
+							<div class="info">
+								<div class="title">E-Learning</div>
+								<div class="value"><a href="https://kuliah2.itera.ac.id" target="_blank" rel="noopener noreferrer">https://kuliah2.itera.ac.id</a></div>
+							</div>
+						</div>
+					</div>
+					<div class="card" style="margin-top: 16px;">
+						<h4>💡 Tips Menghubungi</h4>
+						<p>Gunakan email dengan format: <strong>[MK] - [NIM] - [Keperluan]</strong> di subjek email.</p>
+					</div>
 				</section>
 
-				<section>
-					<h3>Aturan Dosen</h3>
-					<ul>
-						<li>Pembatalan kuliah paling lambat 20 menit setelah jadwal dimulai.</li>
-						<li>Jika kuliah dibatalkan, diadakan kuliah pengganti.</li>
-					</ul>
-				</section>
-
-				<section>
-					<h3>Aturan Mahasiswa (1)</h3>
-					<ul>
-						<li>Toleransi keterlambatan 20 menit.</li>
-						<li>Terlambat > 20 menit: Dianggap tidak hadir, namun boleh ikut kuliah.</li>
-						<li>PLAGIARISME = Nilai <strong>NOL</strong>.</li>
-						<li>Budayakan etika dalam berkomunikasi dengan dosen.</li>
-					</ul>
-				</section>
-
-				<section>
-					<h3>Aturan Mahasiswa (2)</h3>
-					<ul>
-						<li>Jika berhalangan hadir, maks. H-1 sudah mengabari dosen.</li>
-						<li>Mahasiswa aktif update informasi perkuliahan.</li>
-						<li>Kuis/Ujian susulan: Pakai surat keterangan (ttd wali), maks H+7 ujian.</li>
-						<li><strong>Tidak ada tugas tambahan untuk menambah nilai!</strong></li>
-					</ul>
-				</section>
-
-				<section>
-					<h3>Aturan E-Learning</h3>
-					<ul>
-						<li>Peserta kuliah wajib enroll halaman web kuliah.</li>
-						<li>Akun e-learning: First name = NIM.</li>
-						<li>Pengumpulan tugas harus sesuai aturan penamaan.</li>
-					</ul>
-				</section>
-
-				<!-- Penutup -->
-				<section>
-					<h1>SETUJU?</h1>
-					<h3>Siap Menjalankan?</h3>
-					<hr>
-					<h2>SELAMAT BELAJAR</h2>
+				<!-- 8. Penutup -->
+				<section class="cta">
+					<div class="icon">🎓</div>
+					<h1>Siap Belajar Bersama?</h1>
+					<p>Mari jalani semester ini dengan semangat, integritas, dan kolaborasi.</p>
+					<div class="badges">
+						<span class="badge success">Selamat Belajar!</span>
+						<span class="badge">ITERA</span>
+						<span class="badge">Teknik Informatika</span>
+					</div>
+					<div class="cta-quote">"<strong>Satu langkah konsisten</strong> tiap minggu akan membawa kita sampai garis akhir semester."</div>
+					<!-- <div class="cta-marquee">
+						<div class="cta-marquee-track">
+							<span class="chip">Konsisten</span>
+							<span class="chip">Kolaboratif</span>
+							<span class="chip">Rapi</span>
+							<span class="chip">On-time</span>
+							<span class="chip">Growth Mindset</span>
+							<span class="chip">Iteratif</span>
+							<span class="chip">Supportif</span>
+							<span class="chip">Empati</span>
+						</div>
+					</div> -->
 				</section>
 
 			</div>
@@ -155,6 +237,38 @@
 				
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+
+			const themeToggle = document.getElementById('themeToggle');
+			const root = document.documentElement;
+			const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+			function applyTheme(mode) {
+				if (mode === 'dark') {
+					root.setAttribute('data-theme', 'dark');
+					themeToggle.textContent = '☀️';
+				} else {
+					root.setAttribute('data-theme', 'light');
+					themeToggle.textContent = '🌙';
+				}
+			}
+
+			const saved = localStorage.getItem('theme');
+			const initial = saved || (prefersDark.matches ? 'dark' : 'light');
+			applyTheme(initial);
+
+			themeToggle.addEventListener('click', () => {
+				const current = root.getAttribute('data-theme');
+				const next = current === 'dark' ? 'light' : 'dark';
+				localStorage.setItem('theme', next);
+				applyTheme(next);
+			});
+
+			prefersDark.addEventListener('change', (event) => {
+				const savedTheme = localStorage.getItem('theme');
+				if (!savedTheme) {
+					applyTheme(event.matches ? 'dark' : 'light');
+				}
 			});
 		</script>
 	</body>

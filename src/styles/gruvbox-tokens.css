@@ -1,0 +1,169 @@
+/* ==========================================================================
+   Gruvbox Light / Dark Color Tokens & Material 3 Expressive Variable System
+   Default Theme: Gruvbox Light
+   ========================================================================== */
+
+:root,
+[data-theme="light"] {
+  /* Gruvbox Light Palette (Retro Warm Academic) */
+  --gb-bg0: #fbf1c7;       /* Canvas light */
+  --gb-bg0-h: #f9f5d7;     /* Canvas light hard */
+  --gb-bg0-s: #f2e5bc;     /* Canvas light soft */
+  --gb-bg1: #ebdbb2;       /* Surface container low */
+  --gb-bg2: #d5c4a1;       /* Surface container mid */
+  --gb-bg3: #bdae93;       /* Surface container high */
+  --gb-bg4: #a89984;       /* Surface outline */
+
+  --gb-fg0: #282828;       /* Emphasized title text */
+  --gb-fg1: #3c3836;       /* Primary body text */
+  --gb-fg2: #504945;       /* Secondary body text */
+  --gb-fg3: #665c54;       /* Subtle text */
+  --gb-fg4: #7c6f64;       /* Muted / Caption text */
+
+  /* Gruvbox Light Accents */
+  --gb-red: #cc241d;
+  --gb-red-soft: #fde8e7;
+  --gb-green: #98971a;
+  --gb-green-soft: #f4f6dc;
+  --gb-yellow: #d79921;
+  --gb-yellow-soft: #fcf4db;
+  --gb-blue: #458588;
+  --gb-blue-soft: #e2eff0;
+  --gb-purple: #b16286;
+  --gb-purple-soft: #faebf2;
+  --gb-aqua: #689d6a;
+  --gb-aqua-soft: #eaf4eb;
+  --gb-orange: #d65d0e;
+  --gb-orange-soft: #fdeee5;
+
+  /* Material 3 Expressive Roles (Mapped to Gruvbox Light) */
+  --md-sys-color-primary: #af3a03;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #fedcc7;
+  --md-sys-color-on-primary-container: #471100;
+
+  --md-sys-color-secondary: #458588;
+  --md-sys-color-on-secondary: #ffffff;
+  --md-sys-color-secondary-container: #d2eef0;
+  --md-sys-color-on-secondary-container: #002e30;
+
+  --md-sys-color-tertiary: #98971a;
+  --md-sys-color-on-tertiary: #ffffff;
+  --md-sys-color-tertiary-container: #f1f5cd;
+  --md-sys-color-on-tertiary-container: #292d00;
+
+  --md-sys-color-error: #cc241d;
+  --md-sys-color-on-error: #ffffff;
+  --md-sys-color-error-container: #fcdbd8;
+  --md-sys-color-on-error-container: #4e0604;
+
+  --md-sys-color-surface: #fbf1c7;
+  --md-sys-color-on-surface: #3c3836;
+  --md-sys-color-surface-variant: #ebdbb2;
+  --md-sys-color-on-surface-variant: #504945;
+  --md-sys-color-surface-container-lowest: #ffffff;
+  --md-sys-color-surface-container-low: #f9f5d7;
+  --md-sys-color-surface-container: #f2e5bc;
+  --md-sys-color-surface-container-high: #ebdbb2;
+  --md-sys-color-surface-container-highest: #e0cf9b;
+
+  --md-sys-color-outline: #bdae93;
+  --md-sys-color-outline-variant: #d5c4a1;
+
+  /* Expressive Ambient Shadows (Warm Tint) */
+  --m3-shadow-1: 0 2px 6px -1px rgba(60, 56, 54, 0.08), 0 1px 3px -1px rgba(60, 56, 54, 0.04);
+  --m3-shadow-2: 0 4px 12px -2px rgba(60, 56, 54, 0.1), 0 2px 6px -1px rgba(60, 56, 54, 0.06);
+  --m3-shadow-3: 0 8px 24px -4px rgba(60, 56, 54, 0.12), 0 4px 12px -2px rgba(60, 56, 54, 0.08);
+  --m3-shadow-4: 0 16px 36px -6px rgba(60, 56, 54, 0.15), 0 6px 16px -3px rgba(60, 56, 54, 0.09);
+}
+
+[data-theme="dark"] {
+  /* Gruvbox Dark Palette (High Contrast Retro Academic) */
+  --gb-bg0: #282828;       /* Canvas dark */
+  --gb-bg0-h: #1d2021;     /* Canvas dark hard */
+  --gb-bg0-s: #32302f;     /* Canvas dark soft */
+  --gb-bg1: #3c3836;       /* Surface container low */
+  --gb-bg2: #504945;       /* Surface container mid */
+  --gb-bg3: #665c54;       /* Surface container high */
+  --gb-bg4: #7c6f64;       /* Surface outline */
+
+  --gb-fg0: #fbf1c7;       /* Emphasized title text */
+  --gb-fg1: #ebdbb2;       /* Primary body text */
+  --gb-fg2: #d5c4a1;       /* Secondary body text */
+  --gb-fg3: #bdae93;       /* Subtle text */
+  --gb-fg4: #a89984;       /* Muted / Caption text */
+
+  /* Gruvbox Dark Accents (Vibrant retro) */
+  --gb-red: #fb4934;
+  --gb-red-soft: rgba(251, 73, 52, 0.18);
+  --gb-green: #b8bb26;
+  --gb-green-soft: rgba(184, 187, 38, 0.18);
+  --gb-yellow: #fabd2f;
+  --gb-yellow-soft: rgba(250, 189, 47, 0.18);
+  --gb-blue: #83a598;
+  --gb-blue-soft: rgba(131, 165, 152, 0.18);
+  --gb-purple: #d3869b;
+  --gb-purple-soft: rgba(211, 134, 155, 0.18);
+  --gb-aqua: #8ec07c;
+  --gb-aqua-soft: rgba(142, 192, 124, 0.18);
+  --gb-orange: #fe8019;
+  --gb-orange-soft: rgba(254, 128, 25, 0.18);
+
+  /* Material 3 Expressive Roles (Mapped to Gruvbox Dark) */
+  --md-sys-color-primary: #fe8019;
+  --md-sys-color-on-primary: #282828;
+  --md-sys-color-primary-container: #af3a03;
+  --md-sys-color-on-primary-container: #fbf1c7;
+
+  --md-sys-color-secondary: #83a598;
+  --md-sys-color-on-secondary: #1d2021;
+  --md-sys-color-secondary-container: #458588;
+  --md-sys-color-on-secondary-container: #ebdbb2;
+
+  --md-sys-color-tertiary: #b8bb26;
+  --md-sys-color-on-tertiary: #1d2021;
+  --md-sys-color-tertiary-container: #79740e;
+  --md-sys-color-on-tertiary-container: #fbf1c7;
+
+  --md-sys-color-error: #fb4934;
+  --md-sys-color-on-error: #282828;
+  --md-sys-color-error-container: #9d0006;
+  --md-sys-color-on-error-container: #ffd9d5;
+
+  --md-sys-color-surface: #282828;
+  --md-sys-color-on-surface: #ebdbb2;
+  --md-sys-color-surface-variant: #3c3836;
+  --md-sys-color-on-surface-variant: #d5c4a1;
+  --md-sys-color-surface-container-lowest: #1d2021;
+  --md-sys-color-surface-container-low: #282828;
+  --md-sys-color-surface-container: #32302f;
+  --md-sys-color-surface-container-high: #3c3836;
+  --md-sys-color-surface-container-highest: #504945;
+
+  --md-sys-color-outline: #665c54;
+  --md-sys-color-outline-variant: #504945;
+
+  /* Shadows for Dark Mode */
+  --m3-shadow-1: 0 2px 6px -1px rgba(0, 0, 0, 0.4), 0 1px 3px -1px rgba(0, 0, 0, 0.3);
+  --m3-shadow-2: 0 4px 12px -2px rgba(0, 0, 0, 0.5), 0 2px 6px -1px rgba(0, 0, 0, 0.35);
+  --m3-shadow-3: 0 8px 24px -4px rgba(0, 0, 0, 0.6), 0 4px 12px -2px rgba(0, 0, 0, 0.4);
+  --m3-shadow-4: 0 16px 36px -6px rgba(0, 0, 0, 0.7), 0 6px 16px -3px rgba(0, 0, 0, 0.5);
+}
+
+/* Material 3 Expressive Shape Variables */
+:root {
+  --m3-shape-corner-none: 0px;
+  --m3-shape-corner-extra-small: 4px;
+  --m3-shape-corner-small: 8px;
+  --m3-shape-corner-medium: 16px;
+  --m3-shape-corner-large: 24px;
+  --m3-shape-corner-extra-large: 32px;
+  --m3-shape-corner-full: 9999px;
+
+  /* Expressive Transitions */
+  --m3-motion-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --m3-motion-standard: cubic-bezier(0.2, 0, 0, 1);
+  --m3-motion-duration-short: 150ms;
+  --m3-motion-duration-medium: 250ms;
+  --m3-motion-duration-long: 400ms;
+}

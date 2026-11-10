@@ -11,13 +11,13 @@ export const ContactSlide: React.FC = () => {
         {/* Header */}
         <div className="m3-slide-header">
           <h2 className="m3-headline-large">
-            Saluran Komunikasi &amp; Kontak
+            Saluran Komunikasi dan Kontak
           </h2>
         </div>
 
         {/* Content: 3 Massive Cards */}
         <div className="m3-slide-content">
-          <div className="m3-grid-3col">
+          <div className="m3-grid-3col m3-contact-grid">
             {/* 1. Email */}
             <M3Card variant="filled" accentColor="orange">
               <span className="m3-card-category-label text-orange mb-2">
@@ -27,7 +27,7 @@ export const ContactSlide: React.FC = () => {
                 wayan.wisesa@if.itera.ac.id
               </div>
               <div className="m3-body-medium">
-                Gunakan akun email resmi mahasiswa ITERA (<em>@student.itera.ac.id</em>) agar pesan tidak tersaring ke folder spam.
+                Gunakan akun email resmi mahasiswa ITERA (<em>@student.itera.ac.id</em>) agar pesan tidak masuk folder spam.
               </div>
             </M3Card>
 
@@ -37,10 +37,10 @@ export const ContactSlide: React.FC = () => {
                 LOKASI RUANGAN
               </span>
               <div className="m3-card-lead-single">
-                Lab IoT &amp; Jaringan Komputer
+                Lab IoT dan Jaringan Komputer
               </div>
               <div className="m3-body-medium">
-                Gedung Labtek 3 Lantai 3, Kampus ITERA. Tempat aktivitas riset jaringan, praktikum IoT, dan bimbingan Tugas Akhir.
+                Gedung Labtek 3 Lantai 3, Kampus ITERA. Tempat riset, praktikum IoT, serta ruang diskusi dan bimbingan Tugas Akhir.
               </div>
             </M3Card>
 
@@ -53,7 +53,7 @@ export const ContactSlide: React.FC = () => {
                 08.00 — 16.00 WIB
               </div>
               <div className="m3-body-medium">
-                Pada hari dan jam kerja kampus, saat saya tidak sedang memiliki jadwal mengajar di kelas lain.
+                Senin sampai Jumat pada jam kerja kampus, saat saya tidak sedang memiliki jadwal mengajar di kelas lain.
               </div>
             </M3Card>
           </div>

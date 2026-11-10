@@ -23,12 +23,12 @@ export const ClosingSlide: React.FC = () => {
             </M3Card>
 
             {/* Core Values Chips */}
-            <div className="m3-chips-wrap">
-              <M3Chip label="Konsisten" color="orange" />
-              <M3Chip label="Jujur" color="green" />
-              <M3Chip label="Tepat Waktu" color="blue" />
-              <M3Chip label="Rapi" color="purple" />
-              <M3Chip label="Pantang Menyerah" color="aqua" />
+            <div className="m3-chips-wrap m3-closing-chips">
+              <M3Chip label="Konsisten" color="orange" variant="outlined" />
+              <M3Chip label="Jujur" color="green" variant="outlined" />
+              <M3Chip label="Tepat Waktu" color="blue" variant="outlined" />
+              <M3Chip label="Rapi" color="purple" variant="outlined" />
+              <M3Chip label="Pantang Menyerah" color="aqua" variant="outlined" />
             </div>
           </div>
         </div>

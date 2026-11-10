@@ -11,39 +11,29 @@ export const IntegritySlide: React.FC = () => {
         {/* Header */}
         <div className="m3-slide-header">
           <h2 className="m3-headline-large">
-            Integritas &amp; Batasan Mutlak
+            Integritas dan Batasan Mutlak
           </h2>
         </div>
 
-        {/* Content: 2 Giant Red Alert Cards */}
+        {/* Content: Single Prominent Alert Card + Bottom Callout Card */}
         <div className="m3-slide-content">
-          <div className="m3-grid-split">
-            {/* 1. Plagiarisme */}
-            <M3Card variant="filled" accentColor="red">
-
+          <div className="m3-integrity-stage">
+            {/* 1. Plagiarisme - Single Alert Box */}
+            <M3Card variant="filled" accentColor="red" className="m3-integrity-card">
               <div className="m3-card-lead-alert">
-                PLAGIARISME = NILAI 0
-              </div>
-
-              <p className="m3-body-large mb-3">
-                Mencontek, menyalin kode teman, atau copy-paste tugas orang lain otomatis diberi <strong>nilai nol mutlak</strong> untuk kedua belah pihak: <strong>pemberi dan penerima</strong>.
-              </p>
-
-              <div className="m3-title-small">
-                Bikin kode sendiri yang masih sederhana jauh lebih dihargai daripada kode canggih hasil salinan.
-              </div>
-            </M3Card>
-
-            {/* 2. Titip Absen */}
-            <M3Card variant="filled" accentColor="red">
-
-              <div className="m3-card-lead-alert">
-                TITIP ABSEN = SANKSI BERAT
+                PLAGIARISME = NILAI NOL
               </div>
 
               <p className="m3-body-large">
-                Jangan gadaikan integritas dan nama baik kalian hanya demi selembar presensi. Manipulasi kehadiran atau pemalsuan tanda tangan akan dilaporkan langsung ke pengelola program studi.
+                Mencontek, menyalin kode teman, atau copy-paste tugas orang lain otomatis diberi <strong>nilai nol mutlak</strong> untuk kedua belah pihak: <strong>pemberi dan penerima</strong>.
               </p>
+            </M3Card>
+
+            {/* Bottom Reusable Callout Card */}
+            <M3Card variant="tonal" accentColor="orange" className="m3-callout-card">
+              <div className="m3-callout-text">
+                &ldquo;Bikin kode sendiri yang masih sederhana <strong>jauh lebih dihargai</strong> daripada kode canggih hasil salinan.&rdquo;
+              </div>
             </M3Card>
           </div>
         </div>
@@ -51,3 +41,5 @@ export const IntegritySlide: React.FC = () => {
     </section>
   );
 };
+
+

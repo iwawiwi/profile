@@ -11,49 +11,40 @@ export const ResearchSlide: React.FC = () => {
         {/* Header */}
         <div className="m3-slide-header">
           <h2 className="m3-headline-large">
-            Fokus Penelitian &amp; Riset
+            Fokus Penelitian dan Riset
           </h2>
         </div>
 
         {/* Content: 3 Massive Cards */}
         <div className="m3-slide-content">
-          <div className="m3-grid-3col">
+          <div className="m3-grid-3col m3-research-grid">
             {/* 1. Machine Learning */}
             <M3Card variant="filled" accentColor="blue">
               <div className="m3-card-lead">
                 Machine Learning
               </div>
-              <div className="m3-card-sub">
-                Model Komputasi &amp; Multimodal AI
-              </div>
               <div className="m3-body-medium">
-                Pengembangan algoritma pembelajaran mesin terapan, representasi pola data multimedia, ekstraksi fitur adaptif, dan kecerdasan artifisial.
+                Penerapan machine learning untuk analisis data visual dan teks, ekstraksi fitur cerdas, serta eksplorasi arsitektur deep learning terapan.
               </div>
             </M3Card>
 
-            {/* 2. Multimedia / Audio */}
+            {/* 2. Pemrosesan Sinyal */}
             <M3Card variant="filled" accentColor="purple">
               <div className="m3-card-lead">
-                Music Info Retrieval
-              </div>
-              <div className="m3-card-sub">
-                Pemrosesan Sinyal Suara
+                Pemrosesan Sinyal
               </div>
               <div className="m3-body-medium">
-                Analisis frekuensi audio digital, ekstraksi pola nada, pengenalan genre instrumen musik, dan sintesis audio komputasional.
+                Analisis sinyal audio digital, ekstraksi frekuensi suara, serta representasi komputasi sinyal untuk pengenalan sistem cerdas.
               </div>
             </M3Card>
 
-            {/* 3. HCI / Gesture */}
+            {/* 3. Low Power System */}
             <M3Card variant="filled" accentColor="aqua">
               <div className="m3-card-lead">
-                Gesture Recognition
-              </div>
-              <div className="m3-card-sub">
-                Deteksi Gerak &amp; HCI
+                Low Power System
               </div>
               <div className="m3-body-medium">
-                Pengenalan gestur tangan dan tubuh berbasis sensor kamera (computer vision) untuk kendali sistem komputer tanpa sentuh.
+                Pengembangan model kecerdasan buatan yang sadar terhadap efisiensi memori dan batasan daya (<em>power constraint</em>).
               </div>
             </M3Card>
           </div>

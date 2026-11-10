@@ -11,26 +11,25 @@ export const HeroSlide: React.FC = () => {
       <div className="m3-slide-frame m3-slide-frame-center">
         <SlideBackground />
 
+        {/* Top-Left Institutional Brand Lockup (No Separator) */}
+        <div className="m3-hero-corner-brand">
+          <img
+            src={logoItera}
+            alt="Logo Institut Teknologi Sumatera (ITERA)"
+            className="m3-logo-itera"
+          />
+          <img
+            src={logoIfItera}
+            alt="Logo Teknik Informatika ITERA"
+            className="m3-logo-if"
+          />
+        </div>
+
         {/* Center Main Hero Content */}
         <div className="m3-slide-content m3-slide-content-center">
           <div className="m3-center-stage-hero">
-
-            {/* Official Institutional Logos (Large & In-Slide, Pure White on Dark Theme) */}
-            <div className="m3-slide-brand-lockup">
-              <img
-                src={logoItera}
-                alt="Logo Institut Teknologi Sumatera (ITERA)"
-                className="m3-logo-itera"
-              />
-              <img
-                src={logoIfItera}
-                alt="Logo Teknik Informatika ITERA"
-                className="m3-logo-if"
-              />
-            </div>
-
             <span className="m3-eyebrow">
-              Profil Dosen &amp; Kontrak Belajar
+              Profil Dosen dan Kontrak Perkuliahan
             </span>
 
             <h1 className="m3-display-large m3-title-single-line">
@@ -50,13 +49,13 @@ export const HeroSlide: React.FC = () => {
             <div className="m3-grid-3col">
               <M3Card variant="tonal" accentColor="orange">
                 <div className="m3-card-header">
-                  <Building2 size={26} color="var(--gb-orange)" />
+                  <Building2 size={30} color="var(--gb-orange)" />
                   <span className="m3-card-category-label text-orange">
                     RUANG KERJA
                   </span>
                 </div>
                 <div className="m3-title-medium">
-                  Lab IoT &amp; Jaringan Komputer
+                  Lab IoT dan Jaringan Komputer
                 </div>
                 <div className="m3-body-small text-muted">
                   Gedung Labtek 3 Lantai 3
@@ -65,22 +64,22 @@ export const HeroSlide: React.FC = () => {
 
               <M3Card variant="tonal" accentColor="blue">
                 <div className="m3-card-header">
-                  <Sparkles size={26} color="var(--gb-blue)" />
+                  <Sparkles size={30} color="var(--gb-blue)" />
                   <span className="m3-card-category-label text-blue">
                     FOKUS RISET
                   </span>
                 </div>
                 <div className="m3-title-medium">
-                  Machine Learning &amp; Multimedia
+                  Multimedia dan AI
                 </div>
                 <div className="m3-body-small text-muted">
-                  Multimodal AI, MIR, &amp; HCI
+                  ML, Sinyal, dan Low Power System
                 </div>
               </M3Card>
 
               <M3Card variant="tonal" accentColor="green">
                 <div className="m3-card-header">
-                  <Mail size={26} color="var(--gb-green)" />
+                  <Mail size={30} color="var(--gb-green)" />
                   <span className="m3-card-category-label text-green">
                     EMAIL RESMI
                   </span>

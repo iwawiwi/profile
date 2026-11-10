@@ -11,7 +11,7 @@ export const AttendanceRuleSlide: React.FC = () => {
         {/* Header */}
         <div className="m3-slide-header">
           <h2 className="m3-headline-large">
-            Aturan Kehadiran: Toleransi 20 Menit
+            Aturan Kehadiran
           </h2>
         </div>
 
@@ -19,32 +19,24 @@ export const AttendanceRuleSlide: React.FC = () => {
         <div className="m3-slide-content">
           <div className="m3-grid-2col">
             {/* Condition 1: Tepat Waktu (<= 20 Menit) */}
-            <M3Card variant="filled" accentColor="green">
+            <M3Card variant="filled" accentColor="green" className="m3-policy-card">
               <div className="m3-card-lead-xl text-green">
                 Hadir &le; 20 Menit
               </div>
 
-              <div className="m3-card-sub">
-                Presensi Sah &bull; Tercatat 100%
-              </div>
-
-              <p className="m3-body-large">
-                Mahasiswa yang tiba di kelas dalam rentang waktu toleransi berhak mengisi presensi di portal E-Learning (<strong>kuliah.itera.ac.id</strong>) dan mengikuti seluruh rangkaian kuliah.
+              <p className="m3-policy-desc">
+                Tiba dalam batas toleransi 20 menit berhak melakukan <strong>presensi mandiri via scan QR Code di SIAKAD</strong> dan mengikuti perkuliahan penuh.
               </p>
             </M3Card>
 
             {/* Condition 2: Terlambat (> 20 Menit) */}
-            <M3Card variant="filled" accentColor="yellow">
+            <M3Card variant="filled" accentColor="yellow" className="m3-policy-card">
               <div className="m3-card-lead-xl text-yellow">
                 Hadir &gt; 20 Menit
               </div>
 
-              <div className="m3-card-sub">
-                Tetap Boleh Masuk Kelas
-              </div>
-
-              <p className="m3-body-large">
-                Kalau terhalang macet atau urusan darurat, <strong>jangan sungkan masuk kelas</strong>. Kalian tetap boleh menyimak materi dan praktikum, hanya saja presensi pertemuan tersebut dihitung alpa.
+              <p className="m3-policy-desc">
+                Terlambat karena macet atau kendala di jalan? <strong>Tetap masuk kelas</strong> untuk belajar dan menyimak praktikum, meski presensi pertemuan ini dihitung alpa.
               </p>
             </M3Card>
           </div>

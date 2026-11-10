@@ -11,33 +11,32 @@ export const MakeupExamSlide: React.FC = () => {
         {/* Header */}
         <div className="m3-slide-header">
           <h2 className="m3-headline-large">
-            Ketentuan Kuis &amp; Ujian Susulan
+            Ketentuan Kuis dan Ujian Susulan
           </h2>
         </div>
 
-        {/* Content */}
+        {/* Content: 2 Balanced High-Impact Policy Cards */}
         <div className="m3-slide-content">
-          <div className="m3-grid-split">
+          <div className="m3-grid-2col">
             {/* Card 1: Syarat Surat Resmi */}
-            <M3Card variant="filled" accentColor="blue">
-
-              <div className="m3-card-lead-xl">
+            <M3Card variant="filled" accentColor="blue" className="m3-policy-card">
+              <div className="m3-card-lead-xl text-blue">
                 Pengajuan Maksimal H+7
               </div>
 
-              <p className="m3-body-large">
-                Untuk mengikuti kuis atau ujian susulan, wajib melampirkan <strong>surat keterangan dokter asli</strong> atau surat resmi bermeterai dengan <strong>tanda tangan orang tua/wali</strong>. Pengajuan diserahkan selambat-lambatnya <strong>H+7</strong> setelah tanggal ujian berlangsung.
+              <p className="m3-policy-desc">
+                Jika berhalangan saat kuis atau ujian karena sakit atau musibah, wajib sertakan <strong>surat dokter asli</strong> atau izin orang tua. Batas pengajuan paling lambat <strong>H+7</strong> setelah hari ujian.
               </p>
             </M3Card>
 
             {/* Card 2: Tidak Ada Tugas Pengatrol Nilai */}
-            <M3Card variant="filled" accentColor="red">
+            <M3Card variant="filled" accentColor="red" className="m3-policy-card">
               <div className="m3-card-lead-xl text-red">
                 Tidak Ada Tugas Tambahan
               </div>
 
-              <p className="m3-body-large">
-                Saya <strong>tidak memberikan tugas tambahan</strong> untuk mengatrol nilai yang jebol di akhir semester. Nilai akhir dihitung murni dari tugas mingguan, kuis, praktikum, UTS, dan UAS yang dikerjakan tepat waktu sejak awal.
+              <p className="m3-policy-desc">
+                Saya <strong>tidak memberikan tugas pengatrol nilai</strong> di akhir semester. Nilai akhir murni hasil jerih payah tugas mingguan, kuis, praktikum, UTS, dan UAS tepat waktu.
               </p>
             </M3Card>
           </div>

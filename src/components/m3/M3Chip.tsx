@@ -17,60 +17,23 @@ export const M3Chip: React.FC<M3ChipProps> = ({
   variant = 'tonal',
   size = 'md',
   className = '',
-  style = {},
+  style,
 }) => {
-  const isDefault = color === 'default';
-  const colorVar = isDefault ? 'var(--gb-fg3)' : `var(--gb-${color})`;
-  const softColorVar = isDefault
-    ? 'var(--md-sys-color-surface-container-high)'
-    : `var(--gb-${color}-soft)`;
-
-  const getVariantStyles = (): React.CSSProperties => {
-    switch (variant) {
-      case 'solid':
-        return {
-          background: colorVar,
-          color: '#ffffff',
-          border: 'none',
-        };
-      case 'outlined':
-        return {
-          background: 'transparent',
-          color: colorVar,
-          border: `1.5px solid ${colorVar}`,
-        };
-      case 'tonal':
-      default:
-        return {
-          background: softColorVar,
-          color: colorVar,
-          border: `1px solid ${isDefault ? 'var(--md-sys-color-outline-variant)' : colorVar}44`,
-        };
-    }
-  };
-
-  const isSmall = size === 'sm';
+  const chipClass = [
+    'm3-chip',
+    `m3-chip-${size}`,
+    `m3-chip-${variant}-${color}`,
+    className,
+  ]
+    .filter(Boolean)
+    .join(' ');
 
   return (
     <span
-      className={`m3-chip ${className}`}
-      style={{
-        display: 'inline-flex',
-        alignItems: 'center',
-        gap: isSmall ? '8px' : '10px',
-        padding: isSmall ? '6px 14px' : '9px 20px',
-        borderRadius: 'var(--m3-shape-corner-full)',
-        fontSize: isSmall ? '0.85rem' : '0.98rem',
-        fontWeight: 650,
-        letterSpacing: '0.03em',
-        fontFamily: 'Google Sans Flex, sans-serif',
-        lineHeight: 1,
-        transition: 'all 200ms ease',
-        ...getVariantStyles(),
-        ...style,
-      }}
+      className={chipClass}
+      style={style && Object.keys(style).length > 0 ? style : undefined}
     >
-      {icon && <span style={{ display: 'inline-flex', alignItems: 'center' }}>{icon}</span>}
+      {icon && <span className="m3-chip-icon">{icon}</span>}
       {label}
     </span>
   );

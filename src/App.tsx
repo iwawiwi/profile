@@ -34,8 +34,55 @@ export const App: React.FC = () => {
   const [canGoPrev, setCanGoPrev] = useState(false);
   const [canGoNext, setCanGoNext] = useState(true);
 
+  // 4:3 Projector / 16:9 Widescreen aspect ratio state
+  const [aspectRatio, setAspectRatio] = useState<'16:9' | '4:3'>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('reveal-aspect-ratio');
+      if (saved === '4:3' || saved === '16:9') return saved;
+      return window.innerWidth / window.innerHeight <= 1.45 ? '4:3' : '16:9';
+    }
+    return '16:9';
+  });
+
+  const applyAspectRatio = (ratio: '16:9' | '4:3') => {
+    const is43 = ratio === '4:3';
+    document.documentElement.setAttribute('data-ratio', is43 ? '4-3' : '16-9');
+    if (revealInstance.current) {
+      revealInstance.current.configure({
+        width: is43 ? 1440 : 1920,
+        height: 1080,
+      });
+      revealInstance.current.layout();
+    }
+  };
+
+  const toggleAspectRatio = () => {
+    const next = aspectRatio === '16:9' ? '4:3' : '16:9';
+    setAspectRatio(next);
+    localStorage.setItem('reveal-aspect-ratio', next);
+    applyAspectRatio(next);
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      const saved = localStorage.getItem('reveal-aspect-ratio');
+      if (!saved) {
+        const autoRatio = window.innerWidth / window.innerHeight <= 1.45 ? '4:3' : '16:9';
+        if (autoRatio !== aspectRatio) {
+          setAspectRatio(autoRatio);
+          applyAspectRatio(autoRatio);
+        }
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [aspectRatio]);
+
   useEffect(() => {
     if (!deckRef.current) return;
+
+    const initialIs43 = aspectRatio === '4:3';
+    document.documentElement.setAttribute('data-ratio', initialIs43 ? '4-3' : '16-9');
 
     const deck = new Reveal(deckRef.current, {
       hash: true,
@@ -46,11 +93,11 @@ export const App: React.FC = () => {
       transition: 'fade',
       transitionSpeed: 'default',
       backgroundTransition: 'fade',
-      width: '100%',
-      height: '100%',
-      margin: 0,
-      minScale: 1,
-      maxScale: 1,
+      width: initialIs43 ? 1440 : 1920,
+      height: 1080,
+      margin: 0.02,
+      minScale: 0.2,
+      maxScale: 2.0,
       mouseWheel: false,
       keyboard: true,
     });
@@ -125,42 +172,19 @@ export const App: React.FC = () => {
 
   return (
     <div className="reveal-viewport-wrapper">
-      {/* Floating Top Bar (Unobtrusive & Transparent by Default, Opaque on Hover) */}
-      <div className="m3-floating-bar">
-        <M3ThemeToggle />
-
-        <button
-          onClick={toggleOverview}
-          title="Tinjauan Semua Slide (ESC)"
-          aria-label="Toggle slide overview"
-          className="m3-icon-btn"
-        >
-          <Grid size={18} />
-        </button>
-
-        <button
-          onClick={toggleFullscreen}
-          title={isFullscreen ? 'Keluar Layar Penuh' : 'Layar Penuh (F)'}
-          aria-label="Toggle fullscreen"
-          className="m3-icon-btn"
-        >
-          {isFullscreen ? <Minimize2 size={18} /> : <Maximize2 size={18} />}
-        </button>
-      </div>
-
       {/* Reveal Deck Wrapper */}
       <div className="reveal" ref={deckRef}>
         <div className="slides">
           {/* 1. Cover / Hero */}
           <HeroSlide />
 
-          {/* 2. Biodata & Personal */}
+          {/* 2. Biodata dan Personal */}
           <AboutSlide />
 
           {/* 3. Riwayat Pendidikan */}
           <EducationSlide />
 
-          {/* 4. Pengalaman Kerja & Karir */}
+          {/* 4. Pengalaman Kerja dan Karir */}
           <ExperienceSlide />
 
           {/* 5. Tiga Pilar Riset */}
@@ -178,13 +202,13 @@ export const App: React.FC = () => {
           {/* 9. Prosedur Izin Kuliah H-1 */}
           <AbsenceNoticeSlide />
 
-          {/* 10. Kuis & Ujian Susulan H+7 */}
+          {/* 10. Kuis dan Ujian Susulan H+7 */}
           <MakeupExamSlide />
 
-          {/* 11. Nol Toleransi Plagiarisme & Titip Absen */}
+          {/* 11. Nol Toleransi Plagiarisme dan Titip Absen */}
           <IntegritySlide />
 
-          {/* 12. Ekspektasi & Ketertiban LMS */}
+          {/* 12. Ekspektasi dan Ketertiban LMS */}
           <ExpectationsSlide />
 
           {/* 13. Saluran Kontak Dosen */}
@@ -193,38 +217,74 @@ export const App: React.FC = () => {
           {/* 14. Format Wajib Subjek Email */}
           <EmailFormatSlide />
 
-          {/* 15. Penutup & Motto Belajar */}
+          {/* 15. Penutup dan Motto Belajar */}
           <ClosingSlide />
+
+          {/* Persistent Slide Frame Controls (Anchored to the 1920x1080 Canvas) */}
+          <div className="m3-slide-controls">
+            {/* Top Floating Actions Bar */}
+            <div className="m3-floating-bar">
+              {/* Aspect Ratio Toggle (16:9 Widescreen / 4:3 Proyektor) */}
+              <button
+                onClick={toggleAspectRatio}
+                title={`Ubah Rasio Layar Proyektor (Saat ini: ${aspectRatio} - Klik untuk ubah ke ${aspectRatio === '16:9' ? '4:3 Proyektor' : '16:9 Widescreen'})`}
+                aria-label="Toggle Aspect Ratio"
+                className="m3-icon-btn m3-ratio-btn"
+              >
+                <span className="m3-ratio-tag">{aspectRatio}</span>
+              </button>
+
+              <M3ThemeToggle />
+
+              <button
+                onClick={toggleOverview}
+                title="Tinjauan Semua Slide (ESC)"
+                aria-label="Toggle slide overview"
+                className="m3-icon-btn"
+              >
+                <Grid size={18} />
+              </button>
+
+              <button
+                onClick={toggleFullscreen}
+                title={isFullscreen ? 'Keluar Layar Penuh' : 'Layar Penuh (F)'}
+                aria-label="Toggle fullscreen"
+                className="m3-icon-btn"
+              >
+                {isFullscreen ? <Minimize2 size={18} /> : <Maximize2 size={18} />}
+              </button>
+            </div>
+
+            {/* Aesthetic Integrated Navigation Dock */}
+            <div className="m3-nav-dock">
+              <button
+                onClick={handlePrev}
+                disabled={!canGoPrev}
+                title="Slide Sebelumnya (←)"
+                aria-label="Previous Slide"
+                className="m3-nav-btn"
+              >
+                <ChevronLeft size={18} />
+              </button>
+
+              <div className="m3-nav-page">
+                <span className="m3-nav-cur">{String(currentSlide).padStart(2, '0')}</span>
+                <span className="m3-nav-sep">/</span>
+                <span className="m3-nav-tot">{String(totalSlides).padStart(2, '0')}</span>
+              </div>
+
+              <button
+                onClick={handleNext}
+                disabled={!canGoNext}
+                title="Slide Selanjutnya (→)"
+                aria-label="Next Slide"
+                className="m3-nav-btn"
+              >
+                <ChevronRight size={18} />
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
-
-      {/* Aesthetic Integrated Navigation Dock: [ Panah Kiri ] [ Nomor Halaman ] [ Panah Kanan ] */}
-      <div className="m3-nav-dock">
-        <button
-          onClick={handlePrev}
-          disabled={!canGoPrev}
-          title="Slide Sebelumnya (←)"
-          aria-label="Previous Slide"
-          className="m3-nav-btn"
-        >
-          <ChevronLeft size={18} />
-        </button>
-
-        <div className="m3-nav-page">
-          <span className="m3-nav-cur">{String(currentSlide).padStart(2, '0')}</span>
-          <span className="m3-nav-sep">/</span>
-          <span className="m3-nav-tot">{String(totalSlides).padStart(2, '0')}</span>
-        </div>
-
-        <button
-          onClick={handleNext}
-          disabled={!canGoNext}
-          title="Slide Selanjutnya (→)"
-          aria-label="Next Slide"
-          className="m3-nav-btn"
-        >
-          <ChevronRight size={18} />
-        </button>
       </div>
     </div>
   );
